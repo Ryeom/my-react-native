@@ -43,23 +43,22 @@ const AppTabNavigator = createBottomTabNavigator(
 
 const AppTabContainet = createAppContainer(AppTabNavigator)
 
-export default class MainScreen extends Component {
+export default function MainScreen() {
   // navigationOptions 코드 추가
-  static navigationOptions = {
-    header: null,
-    // headerLeft: <Icon name="ios-camera" style={{ paddingLeft: 10 }} />,
-    // title: "인쭈따구래미",
-    // headerRight: <Icon name="ios-send" style={{ paddingRight: 10 }} />,
-  }
 
-  render() {
-    return (
-      // <View style={styles.container}>
-      //   <Text>MainScreen</Text>
-      // </View>
-      <AppTabContainet />
-    )
-  }
+  return (
+    // <View style={styles.container}>
+    //   <Text>MainScreen</Text>
+    // </View>
+    <AppTabContainet />
+  )
+}
+
+MainScreen.navigationOptions = {
+  header: null,
+  // headerLeft: <Icon name="ios-camera" style={{ paddingLeft: 10 }} />,
+  // title: "인쭈따구래미",
+  // headerRight: <Icon name="ios-send" style={{ paddingRight: 10 }} />,
 }
 
 const styles = StyleSheet.create({

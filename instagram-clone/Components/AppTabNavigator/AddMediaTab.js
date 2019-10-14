@@ -1,17 +1,15 @@
 import React, { Component } from "react"
 import { View, Text, StyleSheet } from "react-native"
 import { Icon } from "native-base"
-export default class AddMediaTab extends Component {
-  static navigationOptions = {
-    tabBarIcon: ({ tintColor }) => <Icon name="ios-add-circle" style={{ color: tintColor }} />,
-  }
-  render() {
-    return (
-      <View style={style.container}>
-        <Text>AddMediaTab</Text>
-      </View>
-    )
-  }
+export default function AddMediaTab() {
+  return (
+    <View style={style.container}>
+      <Text>AddMediaTab</Text>
+    </View>
+  )
+}
+AddMediaTab.navigationOptions = {
+  tabBarIcon: ({ tintColor }) => <Icon name="ios-add-circle" style={{ color: tintColor }} />,
 }
 
 const style = StyleSheet.create({
