@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native"
 import { Icon } from "native-base"
 export default class SearchTab extends Component {
   static navigationOptions = {
-    tabBarIcon: ({ tintColor }) => <Icon name="person" style={{ color: tintColor }} />,
+    tabBarIcon: ({ tintColor }) => <Icon name="ios-search" style={{ color: tintColor }} />,
   }
   render() {
     return (

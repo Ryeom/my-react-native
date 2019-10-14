@@ -17,7 +17,7 @@ const AppTabNavigator = createBottomTabNavigator(
     SearchTab: { screen: SearchTab },
     AddMediaTab: { screen: AddMediaTab },
     LikesTab: { screen: LikesTab },
-    ProfileTab: { screen: ProfileTab },//createBottomTabNavigator 생성후
+    ProfileTab: { screen: ProfileTab }, //createBottomTabNavigator 생성후
   },
   {
     animationEnabled: true,
@@ -46,9 +46,10 @@ const AppTabContainet = createAppContainer(AppTabNavigator)
 export default class MainScreen extends Component {
   // navigationOptions 코드 추가
   static navigationOptions = {
-    headerLeft: <Icon name="ios-camera" style={{ paddingLeft: 10 }} />,
-    title: "인쭈따구래미",
-    headerRight: <Icon name="ios-send" style={{ paddingRight: 10 }} />,
+    header: null,
+    // headerLeft: <Icon name="ios-camera" style={{ paddingLeft: 10 }} />,
+    // title: "인쭈따구래미",
+    // headerRight: <Icon name="ios-send" style={{ paddingRight: 10 }} />,
   }
 
   render() {
