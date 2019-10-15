@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { useReducer } from "react"
 import { StyleSheet, Platform } from "react-native"
 import { Icon } from "native-base" // 추가된 코드
 import { createBottomTabNavigator } from "react-navigation-tabs"
@@ -9,6 +9,9 @@ import LikesTab from "./AppTabNavigator/LikesTab"
 import ProfileTab from "./AppTabNavigator/ProfileTab"
 import AddMediaTab from "./AppTabNavigator/AddMediaTab"
 import SearchTab from "./AppTabNavigator/SearchTab"
+
+import { Provider } from "react-redux"
+import store from "../store/configure"
 
 const AppTabNavigator = createBottomTabNavigator(
   {
@@ -46,11 +49,15 @@ const AppTabContainet = createAppContainer(AppTabNavigator)
 export default function MainScreen() {
   // navigationOptions 코드 추가
 
+  //console.log("dispatch :", dispatch)
+
   return (
     // <View style={styles.container}>
     //   <Text>MainScreen</Text>
     // </View>
-    <AppTabContainet />
+    <Provider store={store}>
+      <AppTabContainet />
+    </Provider>
   )
 }
 
