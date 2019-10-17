@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import { View, Text, StyleSheet } from "react-native"
 import { Icon } from "native-base"
 export default function LikesTab() {

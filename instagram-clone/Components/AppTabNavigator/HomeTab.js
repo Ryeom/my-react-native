@@ -1,22 +1,37 @@
 import React, { useEffect } from "react"
 import { View, Text, StyleSheet, ScrollView } from "react-native"
+import { useDispatch, useSelector, useReducer } from "react-redux"
 import { Container, Content, Icon, Thumbnail, Header, Left, Right, Body } from "native-base"
 import CardComponent from "../CardComponent" // 카드 컴포넌트 추가
 import { connect } from "react-redux"
-import * as homeActions from "../../store/modules/home"
-import { bindActionCreators } from "redux"
-HomeTab.navigationOptions = {
-  tabBarIcon: ({ tintColor }) => <Icon name="ios-home" style={{ color: tintColor }} />,
-}
-function HomeTab() {//{ feeds, followings }
-  useEffect(() => {
-    //여기서 로드 될때 값 가져오기
-  })
+import { getFeeds, getFollowings } from "../../store/modules/home"
+//import { bindActionCreators } from "redux"
 
-  const feeds = []
-  const followings = []
+const HomeTab =  () => {
+  //{ feeds, followings }
+  const { feeds, followings } = useSelector((state) => state.home) //hooks
+  //const [ state, dispatch ] =useReducer()
+  const  dispatch = useDispatch()
+  console.log(getFeeds())
+  console.log("asdfdsaf")
+  dispatch(getFeeds())
+  // useEffect(() => {
+  //   // //여기서 로드 될때 값 가져오기
+  //   const fn =  () => {
+  //     try {
+ 
+  //        dispatch(getFeeds())
+  //       console.log("test");
+  //        dispatch(getFollowings())
+  //     } catch (e) {
+  //       console.log("?????")
+  //     }
+  //   }
+  //   fn()
+  // }, [getFeeds, getFollowings])
 
   return (
+    
     <Container style={style.container}>
       <Header>
         <Left>
@@ -54,6 +69,7 @@ function HomeTab() {//{ feeds, followings }
               {followings.map((following) => (
                 <Thumbnail style={{ marginHorizontal: 5, borderColor: "pink", borderWidth: 2 }} source={{ uri: `https://steemitimages.com/u/${following}/avatar` }} />
               ))}
+            
             </ScrollView>
           </View>
         </View>
@@ -66,7 +82,10 @@ function HomeTab() {//{ feeds, followings }
     </Container>
   )
 }
-
+HomeTab.navigationOptions = {
+  tabBarIcon: ({ tintColor }) => <Icon name="ios-home" style={{ color: tintColor }} />,
+  
+}
 const style = StyleSheet.create({
   container: {
     flex: 1,
@@ -74,10 +93,12 @@ const style = StyleSheet.create({
   },
 })
 
-export default connect(
-  (state) => ({
-    feeds: state.home.feeds,
-    followings: state.home.followings,
-  }),
-  (dispatch) => bindActionCreators(homeActions, dispatch),
-)(HomeTab)
+export default HomeTab
+
+// export default connect(
+//   (state) => ({
+//     feeds: state.home.feeds,
+//     followings: state.home.followings,
+//   }),
+//   { getFeeds, getFollowings },
+// )(HomeTab)

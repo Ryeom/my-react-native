@@ -1,6 +1,5 @@
-import React, { useReducer } from "react"
+import React from "react"
 import { StyleSheet, Platform } from "react-native"
-import { Icon } from "native-base" // 추가된 코드
 import { createBottomTabNavigator } from "react-navigation-tabs"
 import { createAppContainer } from "react-navigation"
 
