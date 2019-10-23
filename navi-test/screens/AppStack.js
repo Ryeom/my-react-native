@@ -33,7 +33,7 @@ const SettingStack = createStackNavigator(
     }),
     initialRouteName: "SettingScreen",
   },
-)
+ )
 
 // createBottonNavigator 하단 TAB
 const TabNavigator = createBottomTabNavigator(

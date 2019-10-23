@@ -11,7 +11,7 @@ const ListsDrawerItem = createStackNavigator(
     Playground: {
       screen: Lists,
 
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: ({ navigation }) => ({//
         title: 'Lists',
         headerLeft: (
           <Icon

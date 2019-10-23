@@ -7,7 +7,7 @@ import ListsTab from '../tabs/lists';
 import InputTab from '../tabs/input';
 import FontsTab from '../tabs/fonts';
 
-const Components = createBottomTabNavigator(
+const Components = createBottomTabNavigator(//
   {
     ButtonsTab: {
       screen: ButtonsTab,
@@ -25,7 +25,7 @@ const Components = createBottomTabNavigator(
       },
     },
     ListsTab: {
-      screen: ListsTab,
+      screen: ListsTab,//
       path: '/lists',
       navigationOptions: {
         tabBarLabel: 'Lists',

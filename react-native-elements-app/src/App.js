@@ -64,7 +64,7 @@ const MainRoot = createAppContainer(
         path: '/pricing',
         screen: Pricing,
       },
-      Settings: {
+      Settings: {//
         path: '/settings',
         screen: Settings,
       },
@@ -75,7 +75,7 @@ const MainRoot = createAppContainer(
         activeTintColor: '#548ff7',
         activeBackgroundColor: 'transparent',
         inactiveTintColor: '#ffffff',
-        inactiveBackgroundColor: 'transparent',
+        inactiveBackgroundColor: 'transparent',//
         labelStyle: {
           fontSize: 15,
           marginLeft: 0,
@@ -93,7 +93,7 @@ export default () => {
   const loadAssetsAsync = async () => {
     const imageAssets = cacheImages([
       require('../assets/images/bg_screen1.jpg'),
-      require('../assets/images/bg_screen2.jpg'),
+      require('../assets/images/bg_screen2.jpg'),//
       require('../assets/images/bg_screen3.jpg'),
       require('../assets/images/bg_screen4.jpg'),
       require('../assets/images/user-cool.png'),
